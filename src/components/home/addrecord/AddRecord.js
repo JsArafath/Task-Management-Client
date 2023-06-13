@@ -16,14 +16,16 @@ const AddRecord = () => {
         })
     };
     return (
-        <div className='add-course container bg-gray-200'>
+        <div className='add-course container bg-gray-200 lg:p-9 '>
             <h1 className='text-center text-4xl font-bold mb-4  text-blue-600'>Please Add a Record !!!</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <div className='p-5'>
+            <form className='' onSubmit={handleSubmit(onSubmit)}>
             <input {...register("heading",)} type="text" placeholder="Title" className="input input-bordered input-info w-full max-w-lg py-9 text-white" />
             <input {...register("description",)} type="text" placeholder="Description" className="input input-bordered input-info w-full max-w-lg py-9 text-white" />
-            <input {...register("status",)} disabled type="text" placeholder="Status" className="input input-bordered input-info w-full max-w-lg" />
-            <input type="submit" className='bg-blue-600 text-white w-full max-w-lg' />
+            <input {...register("status",)}  type="text" placeholder="Status" defaultValue="pending" className="input input-bordered input-info w-full max-w-lg" />
+            <input type="submit" className='bg-blue-600 text-white w-full max-w-lg pt-3 pb-7' />
     </form> 
+            </div>
         </div>
     );
 };

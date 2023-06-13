@@ -55,7 +55,7 @@ export const Records = () => {
                 {/* <th>{index + 1}</th> */}
                 <div className='text-center text-gray-900 text-xl font-bold p-2'>{record.heading}</div>
                 <div className='text-center p-2 text-gray-800'>{record.description}</div>
-                <div className='text-center p-2 text-info font-bold'><span className='text-black'>Status:</span> {record.status}</div>
+                <div className='text-center p-2 text-info font-bold'>{record.status}</div>
                 <div className='sm:gap-2'>
                   {record.status !== 'Completed' && (
                     <button

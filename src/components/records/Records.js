@@ -43,28 +43,20 @@ export const Records = () => {
   };
 
   return (
-    <div className='bg-gray-200 '>
+    <div className='bg-gray-100 '>
       <h1 className='font-bold text-5xl text-center pt-5 mb-5 text-blue-600'>
         All Records: {list.length}
       </h1>
-      <div class='overflow-x-auto pt-10 pb-10'>
-        <table class='table-compact w-full text-gray-900'>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {list.map((record, index) => (
-              <tr key={record._id}>
-                <th>{index + 1}</th>
-                <td className='text-center'>{record.heading}</td>
-                <td className='text-center'>{record.description}</td>
-                <td className='text-center'>{record.status}</td>
-                <td className='text-center'>
+      <div class=''>
+          
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto gap-4 bg-whit lg:p-9 '>
+          {list.map((record) => (
+              <div className='border-lg shadow-lg p-9 bg-gray-50 rounded-lg' key={record._id}>
+                {/* <th>{index + 1}</th> */}
+                <div className='text-center text-gray-900 text-xl font-bold p-2'>{record.heading}</div>
+                <div className='text-center p-2 text-gray-800'>{record.description}</div>
+                <div className='text-center p-2 text-info font-bold'><span className='text-black'>Status:</span> {record.status}</div>
+                <div className='sm:gap-2'>
                   {record.status !== 'Completed' && (
                     <button
                       className='btn btn-primary text-white mr-4'
@@ -78,15 +70,16 @@ export const Records = () => {
                   </button>
                   <button
                     onClick={() => handleDelete(record._id)}
-                    className='btn bg-red-600 text-white'
+                    className='btn bg-red-600 text-white m-2'
                   >
                     Delete
                   </button>
-                </td>
-              </tr>
+                </div>
+              </div>
+              
             ))}
-          </tbody>
-        </table>
+          </div>
+            
         
       </div>
     </div>

@@ -6,7 +6,7 @@ export const UpdateRecord = () => {
 const [info,setInfo] = useState({});
 useEffect(()=>{
 
-    const url = `https://task-management-server-jade.vercel.app/records/${id}`;
+    const url = `https://task-management-t3m2.onrender.com/records/${id}`;
     fetch(url)
     .then(res=>res.json())
 .then(data=>setInfo(data));
@@ -23,7 +23,7 @@ const address = event.target.address.value;
 const image = event.target.image.value;
 
 const updated= {displayname,email,contact,address,image};
-const url = `https://task-management-server-jade.vercel.app/records/${id}`;
+const url = `https://task-management-t3m2.onrender.com/records/${id}`;
 fetch(url,{
     method:'PUT',
     headers:{

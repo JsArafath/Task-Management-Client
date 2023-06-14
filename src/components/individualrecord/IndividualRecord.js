@@ -6,7 +6,7 @@ export const IndividualRecord = (props) => {
     const {_id,email,heading,description,completed,comment}=props.lists;
     const [record, setRecord] = useState([])
     useEffect(()=>{
-        fetch('https://task-management-t3m2.onrender.com/records')
+        fetch('https://task-management-server-jade.vercel.app/records')
         .then(res => res.json())
         .then(data => setRecord(data))
     },[])
@@ -14,7 +14,7 @@ export const IndividualRecord = (props) => {
       const proceed = window.confirm('Are you sure you want to delete?');
       if(proceed){
           console.log('deleting user with id',id);
-          const url = `https://task-management-t3m2.onrender.com/records/${id}`;
+          const url = `https://task-management-server-jade.vercel.app/records/${id}`;
           fetch(url,{
               method:'DELETE'
 

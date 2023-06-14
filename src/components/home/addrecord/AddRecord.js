@@ -7,7 +7,7 @@ const AddRecord = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://task-management-t3m2.onrender.com/records',data)
+        axios.post('https://task-management-server-jade.vercel.app/records',data)
         .then(res=>{
            if(res.data.insertedId){
                alert('Added Successfully');
